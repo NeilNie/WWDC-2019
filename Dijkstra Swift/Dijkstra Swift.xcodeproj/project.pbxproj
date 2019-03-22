@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00C18F3422441842009A8F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F3322441842009A8F38 /* AppDelegate.swift */; };
+		00C18F3622441842009A8F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F3522441842009A8F38 /* ViewController.swift */; };
+		00C18F3822441843009A8F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F3722441843009A8F38 /* Assets.xcassets */; };
+		00C18F3B22441843009A8F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F3922441843009A8F38 /* Main.storyboard */; };
+		00C18F4722441844009A8F38 /* Dijkstra_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F4622441844009A8F38 /* Dijkstra_SwiftTests.swift */; };
+		00C18F5222441844009A8F38 /* Dijkstra_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F5122441844009A8F38 /* Dijkstra_SwiftUITests.swift */; };
+		00C18F602244185D009A8F38 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F5F2244185D009A8F38 /* Graph.swift */; };
+		00C18F6222441869009A8F38 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F6122441869009A8F38 /* Heap.swift */; };
+		00C18F6422441870009A8F38 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F6322441870009A8F38 /* PriorityQueue.swift */; };
+		00C18F6622441879009A8F38 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F6522441879009A8F38 /* Vertex.swift */; };
+		00C18F6A2244318A009A8F38 /* name.csv in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F6722443189009A8F38 /* name.csv */; };
+		00C18F6B2244318A009A8F38 /* city.csv in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F682244318A009A8F38 /* city.csv */; };
+		00C18F6C2244318A009A8F38 /* connection.csv in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F692244318A009A8F38 /* connection.csv */; };
+		00C18F6E2244710E009A8F38 /* new_connections.csv in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F6D2244710E009A8F38 /* new_connections.csv */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00C18F4322441843009A8F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C18F2822441842009A8F38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00C18F2F22441842009A8F38;
+			remoteInfo = "Dijkstra Swift";
+		};
+		00C18F4E22441844009A8F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C18F2822441842009A8F38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00C18F2F22441842009A8F38;
+			remoteInfo = "Dijkstra Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C18F3022441842009A8F38 /* Dijkstra Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dijkstra Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C18F3322441842009A8F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00C18F3522441842009A8F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00C18F3722441843009A8F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00C18F3A22441843009A8F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00C18F3C22441843009A8F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C18F3D22441843009A8F38 /* Dijkstra_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dijkstra_Swift.entitlements; sourceTree = "<group>"; };
+		00C18F4222441843009A8F38 /* Dijkstra SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dijkstra SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C18F4622441844009A8F38 /* Dijkstra_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra_SwiftTests.swift; sourceTree = "<group>"; };
+		00C18F4822441844009A8F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C18F4D22441844009A8F38 /* Dijkstra SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dijkstra SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C18F5122441844009A8F38 /* Dijkstra_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra_SwiftUITests.swift; sourceTree = "<group>"; };
+		00C18F5322441844009A8F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C18F5F2244185D009A8F38 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		00C18F6122441869009A8F38 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		00C18F6322441870009A8F38 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		00C18F6522441879009A8F38 /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		00C18F6722443189009A8F38 /* name.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = name.csv; sourceTree = "<group>"; };
+		00C18F682244318A009A8F38 /* city.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.csv; sourceTree = "<group>"; };
+		00C18F692244318A009A8F38 /* connection.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = connection.csv; sourceTree = "<group>"; };
+		00C18F6D2244710E009A8F38 /* new_connections.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new_connections.csv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00C18F2D22441842009A8F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F3F22441843009A8F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F4A22441844009A8F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00C18F2722441842009A8F38 = {
+			isa = PBXGroup;
+			children = (
+				00C18F3222441842009A8F38 /* Dijkstra Swift */,
+				00C18F4522441843009A8F38 /* Dijkstra SwiftTests */,
+				00C18F5022441844009A8F38 /* Dijkstra SwiftUITests */,
+				00C18F3122441842009A8F38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00C18F3122441842009A8F38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00C18F3022441842009A8F38 /* Dijkstra Swift.app */,
+				00C18F4222441843009A8F38 /* Dijkstra SwiftTests.xctest */,
+				00C18F4D22441844009A8F38 /* Dijkstra SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00C18F3222441842009A8F38 /* Dijkstra Swift */ = {
+			isa = PBXGroup;
+			children = (
+				00C18F682244318A009A8F38 /* city.csv */,
+				00C18F692244318A009A8F38 /* connection.csv */,
+				00C18F6722443189009A8F38 /* name.csv */,
+				00C18F6D2244710E009A8F38 /* new_connections.csv */,
+				00C18F3322441842009A8F38 /* AppDelegate.swift */,
+				00C18F3522441842009A8F38 /* ViewController.swift */,
+				00C18F5F2244185D009A8F38 /* Graph.swift */,
+				00C18F6122441869009A8F38 /* Heap.swift */,
+				00C18F6322441870009A8F38 /* PriorityQueue.swift */,
+				00C18F6522441879009A8F38 /* Vertex.swift */,
+				00C18F3722441843009A8F38 /* Assets.xcassets */,
+				00C18F3922441843009A8F38 /* Main.storyboard */,
+				00C18F3C22441843009A8F38 /* Info.plist */,
+				00C18F3D22441843009A8F38 /* Dijkstra_Swift.entitlements */,
+			);
+			path = "Dijkstra Swift";
+			sourceTree = "<group>";
+		};
+		00C18F4522441843009A8F38 /* Dijkstra SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				00C18F4622441844009A8F38 /* Dijkstra_SwiftTests.swift */,
+				00C18F4822441844009A8F38 /* Info.plist */,
+			);
+			path = "Dijkstra SwiftTests";
+			sourceTree = "<group>";
+		};
+		00C18F5022441844009A8F38 /* Dijkstra SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				00C18F5122441844009A8F38 /* Dijkstra_SwiftUITests.swift */,
+				00C18F5322441844009A8F38 /* Info.plist */,
+			);
+			path = "Dijkstra SwiftUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00C18F2F22441842009A8F38 /* Dijkstra Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C18F5622441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra Swift" */;
+			buildPhases = (
+				00C18F2C22441842009A8F38 /* Sources */,
+				00C18F2D22441842009A8F38 /* Frameworks */,
+				00C18F2E22441842009A8F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dijkstra Swift";
+			productName = "Dijkstra Swift";
+			productReference = 00C18F3022441842009A8F38 /* Dijkstra Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00C18F4122441843009A8F38 /* Dijkstra SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C18F5922441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra SwiftTests" */;
+			buildPhases = (
+				00C18F3E22441843009A8F38 /* Sources */,
+				00C18F3F22441843009A8F38 /* Frameworks */,
+				00C18F4022441843009A8F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C18F4422441843009A8F38 /* PBXTargetDependency */,
+			);
+			name = "Dijkstra SwiftTests";
+			productName = "Dijkstra SwiftTests";
+			productReference = 00C18F4222441843009A8F38 /* Dijkstra SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		00C18F4C22441844009A8F38 /* Dijkstra SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00C18F5C22441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra SwiftUITests" */;
+			buildPhases = (
+				00C18F4922441844009A8F38 /* Sources */,
+				00C18F4A22441844009A8F38 /* Frameworks */,
+				00C18F4B22441844009A8F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00C18F4F22441844009A8F38 /* PBXTargetDependency */,
+			);
+			name = "Dijkstra SwiftUITests";
+			productName = "Dijkstra SwiftUITests";
+			productReference = 00C18F4D22441844009A8F38 /* Dijkstra SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00C18F2822441842009A8F38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Yongyang Nie";
+				TargetAttributes = {
+					00C18F2F22441842009A8F38 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					00C18F4122441843009A8F38 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 00C18F2F22441842009A8F38;
+					};
+					00C18F4C22441844009A8F38 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 00C18F2F22441842009A8F38;
+					};
+				};
+			};
+			buildConfigurationList = 00C18F2B22441842009A8F38 /* Build configuration list for PBXProject "Dijkstra Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00C18F2722441842009A8F38;
+			productRefGroup = 00C18F3122441842009A8F38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00C18F2F22441842009A8F38 /* Dijkstra Swift */,
+				00C18F4122441843009A8F38 /* Dijkstra SwiftTests */,
+				00C18F4C22441844009A8F38 /* Dijkstra SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00C18F2E22441842009A8F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C18F3822441843009A8F38 /* Assets.xcassets in Resources */,
+				00C18F6C2244318A009A8F38 /* connection.csv in Resources */,
+				00C18F3B22441843009A8F38 /* Main.storyboard in Resources */,
+				00C18F6E2244710E009A8F38 /* new_connections.csv in Resources */,
+				00C18F6A2244318A009A8F38 /* name.csv in Resources */,
+				00C18F6B2244318A009A8F38 /* city.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F4022441843009A8F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F4B22441844009A8F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00C18F2C22441842009A8F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C18F602244185D009A8F38 /* Graph.swift in Sources */,
+				00C18F3622441842009A8F38 /* ViewController.swift in Sources */,
+				00C18F3422441842009A8F38 /* AppDelegate.swift in Sources */,
+				00C18F6422441870009A8F38 /* PriorityQueue.swift in Sources */,
+				00C18F6222441869009A8F38 /* Heap.swift in Sources */,
+				00C18F6622441879009A8F38 /* Vertex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F3E22441843009A8F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C18F4722441844009A8F38 /* Dijkstra_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00C18F4922441844009A8F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C18F5222441844009A8F38 /* Dijkstra_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00C18F4422441843009A8F38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00C18F2F22441842009A8F38 /* Dijkstra Swift */;
+			targetProxy = 00C18F4322441843009A8F38 /* PBXContainerItemProxy */;
+		};
+		00C18F4F22441844009A8F38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00C18F2F22441842009A8F38 /* Dijkstra Swift */;
+			targetProxy = 00C18F4E22441844009A8F38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00C18F3922441843009A8F38 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00C18F3A22441843009A8F38 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00C18F5422441844009A8F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00C18F5522441844009A8F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		00C18F5722441844009A8F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dijkstra Swift/Dijkstra_Swift.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		00C18F5822441844009A8F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dijkstra Swift/Dijkstra_Swift.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		00C18F5A22441844009A8F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dijkstra Swift.app/Contents/MacOS/Dijkstra Swift";
+			};
+			name = Debug;
+		};
+		00C18F5B22441844009A8F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dijkstra Swift.app/Contents/MacOS/Dijkstra Swift";
+			};
+			name = Release;
+		};
+		00C18F5D22441844009A8F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "Dijkstra Swift";
+			};
+			name = Debug;
+		};
+		00C18F5E22441844009A8F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YC4C987ET6;
+				INFOPLIST_FILE = "Dijkstra SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.Dijkstra-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "Dijkstra Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00C18F2B22441842009A8F38 /* Build configuration list for PBXProject "Dijkstra Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C18F5422441844009A8F38 /* Debug */,
+				00C18F5522441844009A8F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C18F5622441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C18F5722441844009A8F38 /* Debug */,
+				00C18F5822441844009A8F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C18F5922441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C18F5A22441844009A8F38 /* Debug */,
+				00C18F5B22441844009A8F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00C18F5C22441844009A8F38 /* Build configuration list for PBXNativeTarget "Dijkstra SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00C18F5D22441844009A8F38 /* Debug */,
+				00C18F5E22441844009A8F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00C18F2822441842009A8F38 /* Project object */;
+}
