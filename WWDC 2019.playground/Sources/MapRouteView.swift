@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class MapRouteView: UIView {
+public class MapRouteView: UIView {
     
     var startTextField : UITextField!
     var endTextField : UITextField!
@@ -46,9 +46,6 @@ class MapRouteView: UIView {
         mapSceneView.backgroundColor = UIColor.init(red: 245.0 / 255, green: 245.0 / 255, blue: 245.0 / 255, alpha: 1.0)
         mapSceneView.layer.cornerRadius = 10.0
         mapSceneView.clipsToBounds = true
-//        mapSceneView.layer.shadowOffset = CGSize.init(width: 10, height: 15)
-//        mapSceneView.layer.shadowRadius = 5
-//        mapSceneView.layer.shadowOpacity = 0.1
         
         self.addSubview(mapSceneView)
         
@@ -86,7 +83,7 @@ class MapRouteView: UIView {
         titleLabel.alpha = 0.0
         self.addSubview(titleLabel)
         
-        resultsTableView = UITableView.init(frame: CGRect.init(x: (screenWidth / 2) - CGFloat((size / 2)), y: 530, width: 680, height: 190))
+        resultsTableView = UITableView.init(frame: CGRect.init(x: (screenWidth / 2) - CGFloat((size / 2)), y: 530, width: 680, height: 300))
         resultsTableView.backgroundColor = UIColor.init(red: 245.0 / 255, green: 245.0 / 255, blue: 245.0 / 255, alpha: 1.0)
         resultsTableView.layer.cornerRadius = 10
         resultsTableView.clipsToBounds = true

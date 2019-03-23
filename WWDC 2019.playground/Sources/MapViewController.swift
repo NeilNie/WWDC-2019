@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+public class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var graph = Graph()
     
@@ -64,7 +64,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
         
         let connectionContent = try! String.init(contentsOf: url3!, encoding: String.Encoding.utf8)
         var connections = connectionContent.components(separatedBy: CharacterSet.newlines)
-        print("total connections \(connections.count)")
+//        print("total connections \(connections.count)")
         
         for i in 0..<connections.count{
             
@@ -79,7 +79,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     
     // MARK: - UITableView Delegate
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = self.routeResult[indexPath.row]
@@ -87,7 +87,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.routeResult.count
     }
     
@@ -122,7 +122,6 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     }
     
     @objc
-    // MARK: - IBAction
     public func clearRoute() {
         
         self.hideViews()
@@ -130,7 +129,7 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
         
         let sn = SKSpriteNode.init(imageNamed: "map.png")
         sn.size = CGSize.init(width: 680, height: 423)
-        sn.position = CGPoint.init(x: 0, y: 10)
+        sn.position = CGPoint.init(x: 0, y: 0)
         sn.xScale = 0.90
         sn.yScale = 0.90
         sn.alpha = 0.75
@@ -288,26 +287,28 @@ class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDeleg
     }
     
     // MARK: - UITextField Delegate
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         
         clearScene()
         
         let searchViewController = SearchViewController()
         searchViewController.data = self.cities
         searchViewController.sender = textField
+        searchViewController.preferredContentSize = CGSize(width: 700, height: 760)
+
         
         self.present(searchViewController, animated: true, completion: nil)
     }
     
     // MARK: - Load View
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = UIColor.white
         
-        self.mapView = MapRouteView.init(frame: CGRect.init(x: 35, y: 50, width: 700, height: 760))
+        self.mapView = MapRouteView.init(frame: CGRect.init(x: (768 / 2) - CGFloat((700 / 2)), y: 50, width: 700, height: 900))
         self.view.addSubview(self.mapView)
         
         self.mapView.endTextField.delegate = self

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A143112246AE3600C8468B /* map_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00A143102246AE3600C8468B /* map_2.jpg */; };
 		00C18F7C224478A8009A8F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F7B224478A8009A8F38 /* AppDelegate.swift */; };
 		00C18F7E224478A8009A8F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18F7D224478A8009A8F38 /* ViewController.swift */; };
 		00C18F81224478A8009A8F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C18F7F224478A8009A8F38 /* Main.storyboard */; };
@@ -24,7 +25,6 @@
 		00C18FBE22447D9A009A8F38 /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C18FBD22447D9A009A8F38 /* MapRouteView.swift */; };
 		00C18FC022447E4C009A8F38 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C18FBF22447E4B009A8F38 /* map.png */; };
 		00C1903F22447FAD009A8F38 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C1903E22447FAD009A8F38 /* SpriteKit.framework */; };
-		00C1904122447FB8009A8F38 /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C1904022447FB8009A8F38 /* MapScene.swift */; };
 		00C1904422447FD5009A8F38 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C1904222447FD5009A8F38 /* GameKit.framework */; };
 		00C1904522447FD6009A8F38 /* GameplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C1904322447FD5009A8F38 /* GameplayKit.framework */; };
 		00C19047224482DA009A8F38 /* MapSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C19046224482DA009A8F38 /* MapSceneView.swift */; };
@@ -34,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00A143102246AE3600C8468B /* map_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map_2.jpg; sourceTree = "<group>"; };
 		00C18F78224478A8009A8F38 /* Dijkstra Swift iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dijkstra Swift iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C18F7B224478A8009A8F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00C18F7D224478A8009A8F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		00C18FBD22447D9A009A8F38 /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
 		00C18FBF22447E4B009A8F38 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		00C1903E22447FAD009A8F38 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		00C1904022447FB8009A8F38 /* MapScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		00C1904222447FD5009A8F38 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		00C1904322447FD5009A8F38 /* GameplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameplayKit.framework; path = System/Library/Frameworks/GameplayKit.framework; sourceTree = SDKROOT; };
 		00C19046224482DA009A8F38 /* MapSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneView.swift; sourceTree = "<group>"; };
@@ -113,7 +113,6 @@
 				00D231ED2245DFE6007BF276 /* Data Structure */,
 				00D231E92245D156007BF276 /* SearchView.swift */,
 				00C18FBD22447D9A009A8F38 /* MapRouteView.swift */,
-				00C1904022447FB8009A8F38 /* MapScene.swift */,
 				00C19046224482DA009A8F38 /* MapSceneView.swift */,
 			);
 			path = Objects;
@@ -122,6 +121,7 @@
 		00C18FBA224478E1009A8F38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00A143102246AE3600C8468B /* map_2.jpg */,
 				00C18FBF22447E4B009A8F38 /* map.png */,
 				00C19048224487E2009A8F38 /* GameScene.sks */,
 				00C18F82224478A9009A8F38 /* Assets.xcassets */,
@@ -223,6 +223,7 @@
 				00C18F81224478A8009A8F38 /* Main.storyboard in Resources */,
 				00C19049224487E2009A8F38 /* GameScene.sks in Resources */,
 				00C18FAD224478B4009A8F38 /* city.csv in Resources */,
+				00A143112246AE3600C8468B /* map_2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +242,6 @@
 				00C18FB7224478BB009A8F38 /* Vertex.swift in Sources */,
 				00D231EC2245D156007BF276 /* SearchViewController.swift in Sources */,
 				00C18FBE22447D9A009A8F38 /* MapRouteView.swift in Sources */,
-				00C1904122447FB8009A8F38 /* MapScene.swift in Sources */,
 				00C18F7C224478A8009A8F38 /* AppDelegate.swift in Sources */,
 				00C18FBC22447CBB009A8F38 /* MapViewController.swift in Sources */,
 				00D231EB2245D156007BF276 /* SearchView.swift in Sources */,
