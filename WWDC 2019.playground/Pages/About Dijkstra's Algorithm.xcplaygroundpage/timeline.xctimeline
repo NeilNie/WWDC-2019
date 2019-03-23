@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Timeline
+   version = "3.0">
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=8&amp;CharacterRangeLoc=553&amp;EndingColumnNumber=13&amp;EndingLineNumber=11&amp;StartingColumnNumber=5&amp;StartingLineNumber=11&amp;Timestamp=575067982.103204"
+         lockedSize = "{414.36916835699799, 288}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=12&amp;CharacterRangeLoc=1066&amp;EndingColumnNumber=288&amp;EndingLineNumber=21&amp;StartingColumnNumber=276&amp;StartingLineNumber=21&amp;Timestamp=575067982.1033649"
+         lockedSize = "{282.62363919129081, 244}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=5&amp;CharacterRangeLoc=1132&amp;EndingColumnNumber=10&amp;EndingLineNumber=24&amp;StartingColumnNumber=5&amp;StartingLineNumber=24&amp;Timestamp=575067982.10348"
+         lockedSize = "{277.62363919129081, 243}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=6&amp;CharacterRangeLoc=1576&amp;EndingColumnNumber=11&amp;EndingLineNumber=33&amp;StartingColumnNumber=5&amp;StartingLineNumber=33&amp;Timestamp=575067982.103588"
+         lockedSize = "{258, 255}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=6&amp;CharacterRangeLoc=2232&amp;EndingColumnNumber=11&amp;EndingLineNumber=43&amp;StartingColumnNumber=5&amp;StartingLineNumber=43&amp;Timestamp=575067982.10369"
+         lockedSize = "{267, 262}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=6&amp;CharacterRangeLoc=2316&amp;EndingColumnNumber=11&amp;EndingLineNumber=45&amp;StartingColumnNumber=5&amp;StartingLineNumber=45&amp;Timestamp=575067982.1037771"
+         lockedSize = "{264, 259}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/YongyangNie/Desktop/WWDC%202019/WWDC%202019.playground/Pages/About%20Dijkstra&apos;s%20Algorithm.xcplaygroundpage#CharacterRangeLen=6&amp;CharacterRangeLoc=2400&amp;EndingColumnNumber=11&amp;EndingLineNumber=47&amp;StartingColumnNumber=5&amp;StartingLineNumber=47&amp;Timestamp=575067982.103879"
+         lockedSize = "{264, 261}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+</Timeline>
