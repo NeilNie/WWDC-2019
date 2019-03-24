@@ -27,7 +27,17 @@ public class SearchViewController: UIViewController, UITableViewDataSource, UITa
         self.mainSearchView.tableView.dataSource = self
         self.mainSearchView.searchBar.delegate = self
         
+        self.mainSearchView.dismissButton.addTarget(self, action: #selector(dismissView), for: UIControl.Event.touchUpInside)
+        
         filteredData = data
+    }
+    
+    // MARK: - IBAction
+    @objc
+    public func dismissView() {
+        self.dismiss(animated: true) {
+            self.sender.resignFirstResponder()
+        }
     }
     
     // MARK: - UITableView Delegate

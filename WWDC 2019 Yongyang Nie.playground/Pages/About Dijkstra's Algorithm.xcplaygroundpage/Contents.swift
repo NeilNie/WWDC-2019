@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import PlaygroundSupport
+//: [Table of Contents](Table%20of%20Contents) | [Find Your Way Around the United States](Find%20Your%20Way%20Around%20the%20United%20States)
 /*:
  # About Dijkstra's Algorithm
  
@@ -28,7 +29,7 @@ let graph2 = UIImage(named: "graph_2.png")
 /*:
  ### Searching...
  
- Now, each city has a key and each connection between the cities has a weight, we can begin the searching process. The goal of Dijkstra's algorithm is to find the path from A to B while minimizing the cost. The cost between two cities if the sum of all of the edges that connects the two cities. In the example above, the cost of traveling from New York to Newark, through Jersey City, is 110. (It doesn't have a unit, just an arbitrary value.)
+ Now, each city has a key and each connection between the cities has a weight, we can begin the searching process. The goal of Dijkstra's algorithm is to find the path from A to B while minimizing the cost. The cost between two cities if the sum of all of the edges that connects the two cities. In the example above, the cost of traveling from New York City to Newark, through Boston, is 110. (Currently, it doesn't have a unit, just an arbitrary value. And you shouldn't go through Boston to get to Newark.)
  
  Let's say we want to travel from New York City to New Haven. How would Dijkstra's algorithm calculate the shortest route?
  */
@@ -45,7 +46,7 @@ let route3 = UIImage(named: "route_3.png")
  
  It's time to put these ideas into action. I created a SpriteKit view to demonstrate a graph and Dijkstra's algorithm. You can add nodes and build edges between them. Using the method `findPath(startIndex, endIndex)`, you can quickly find and visualize the shortest path between two nodes. First, let's create an instance of `GraphView`.
 */
-let graphView = GraphView.init(frame: CGRect.init(x: 0, y: 0, width: 500, height: 500))
+let graphView = GraphView.init(frame: CGRect.init(x: 0, y: 0, width: 500, height: 350))
 //: Let's create an array of coordinates. You can also try to add new nodes or remove the existing ones.
 var coordinates = [Coordinate]()
 coordinates.append(Coordinate(x: -30, y: 4))
@@ -64,7 +65,7 @@ graphView.drawPath(startVertexIndex: 3, endVertexIndex: 4)
 // graphView.drawPath(startVertexIndex: 1, endVertexIndex: 2)
 graphView.drawPath(startVertexIndex: 4, endVertexIndex: 2)
 graphView.drawPath(startVertexIndex: 2, endVertexIndex: 0)
-//: Now, let's use Dijkstra's algorithm to find the shortest path between two nodes. Please change the value of the `startIndex` and `endIndex` to try out different routes.
+//: Now, let's use Dijkstra's algorithm to find the shortest path between two nodes. Please change the value of the `startIndex` and `endIndex` to try out different routes. (Please open the Playground Live View)
 graphView.findPath(startIndex: 2, endIndex: 3)
 PlaygroundPage.current.liveView = graphView
 /*:
@@ -72,4 +73,4 @@ PlaygroundPage.current.liveView = graphView
  I hope you enjoyed that example.
  Once we are familiar with the principles behind Dijkstra's algorithm, let's try out the interactive demo, and find our ways across the country.
  */
-//: [Table of Contents](@Table%20of%20Contents) | [Find Your Way Around the United States](Find%20Your%20Way%20Around%20the%20United%20States)
+//: [Table of Contents](Table%20of%20Contents) | [Find Your Way Around the United States](Find%20Your%20Way%20Around%20the%20United%20States)

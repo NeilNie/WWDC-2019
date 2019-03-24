@@ -17,8 +17,8 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
     var cities = [String]()
     var routeResult = [String]()
     
-    let xScaleFactor = 750*0.64
-    let yScaleFactor = 590*0.67
+    let xScaleFactor = 750*0.63
+    let yScaleFactor = 590*0.66
     
     // MARK: - UITableView Delegate
     
@@ -39,7 +39,12 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
     @objc
     public func makeRoute() {
         
-        if self.mapView.viewClear == true {
+        if (self.mapView.endTextField.text!.count == 0 && self.mapView.startTextField.text!.count == 0) {
+            self.showPleaseEnterAlert()
+            return
+        }
+        
+        if self.mapView.viewClear == true{
             
             let startKey = self.getKeyWithCityName(name: self.mapView.startTextField.text!)
             let endKey = self.getKeyWithCityName(name: self.mapView.endTextField.text!)
@@ -128,8 +133,8 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
             }
             
             let path = CGMutablePath()
-            path.move(to: CGPoint.init(x: vt.coordinate.x * xScaleFactor - 2, y: vt.coordinate.y * yScaleFactor - 3))
-            path.addLine(to: CGPoint.init(x: (vt.previous?.coordinate.x)! * xScaleFactor - 2, y: (vt.previous?.coordinate.y)! * yScaleFactor - 3))
+            path.move(to: CGPoint.init(x: vt.coordinate.x * xScaleFactor - 2.5, y: vt.coordinate.y * yScaleFactor - 5))
+            path.addLine(to: CGPoint.init(x: (vt.previous?.coordinate.x)! * xScaleFactor - 2.5, y: (vt.previous?.coordinate.y)! * yScaleFactor - 5))
             
             let line = SKShapeNode.init(path: path as CGPath)
             line.name = vt.key
@@ -173,6 +178,22 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showPleaseEnterAlert() {
+        
+        let alert = UIAlertController(title: "Oops", message: "Please enter two cities. Simply click the text field, and then, type or select the cities. ", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                alert.dismiss(animated: true, completion: nil)
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                alert.dismiss(animated: true, completion: nil)
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func showHiddenViewsWithAlert(executionTime: Double, resultCount: Int) {
         
         UIView.animate(withDuration: 0.35, animations: {
@@ -210,7 +231,7 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
         circle.name = key
         circle.strokeColor = UIColor.blue
         circle.fillColor = UIColor.blue
-        circle.position = CGPoint.init(x: c.x * xScaleFactor - 2 , y: c.y * yScaleFactor - 4.5) // - 400.0 - 175.0
+        circle.position = CGPoint.init(x: c.x * xScaleFactor - 2.5 , y: c.y * yScaleFactor - 5) // - 400.0 - 175.0
         circle.alpha = 0.50
         self.mapView.mapScene.addChild(circle)
     }

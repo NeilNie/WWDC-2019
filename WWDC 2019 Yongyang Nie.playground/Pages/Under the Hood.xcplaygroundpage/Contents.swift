@@ -1,4 +1,4 @@
-
+//: [Find Your Way Around the United States](Find%20Your%20Way%20Around%20the%20United%20States) | [Table of Contents](Table%20of%20Contents)
 /*:
  
  # Under the Hood
@@ -19,7 +19,5 @@
  # Finally... 😀
  
  I hope you have joyed this playground. I look forward to a wonderful WWDC this year!
- 
  */
-
-//: [Previous](@Find%20Your%20Way%20Around%20the%20United%20States)
+//: [Find Your Way Around the United States](Find%20Your%20Way%20Around%20the%20United%20States) | [Table of Contents](Table%20of%20Contents)

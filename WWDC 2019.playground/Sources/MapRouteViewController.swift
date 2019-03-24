@@ -17,8 +17,8 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
     var cities = [String]()
     var routeResult = [String]()
     
-    let xScaleFactor = 750*0.64
-    let yScaleFactor = 590*0.67
+    let xScaleFactor = 750*0.63
+    let yScaleFactor = 590*0.66
     
     // MARK: - UITableView Delegate
     
@@ -133,8 +133,8 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
             }
             
             let path = CGMutablePath()
-            path.move(to: CGPoint.init(x: vt.coordinate.x * xScaleFactor - 2, y: vt.coordinate.y * yScaleFactor - 3))
-            path.addLine(to: CGPoint.init(x: (vt.previous?.coordinate.x)! * xScaleFactor - 2, y: (vt.previous?.coordinate.y)! * yScaleFactor - 3))
+            path.move(to: CGPoint.init(x: vt.coordinate.x * xScaleFactor - 2.5, y: vt.coordinate.y * yScaleFactor - 5))
+            path.addLine(to: CGPoint.init(x: (vt.previous?.coordinate.x)! * xScaleFactor - 2.5, y: (vt.previous?.coordinate.y)! * yScaleFactor - 5))
             
             let line = SKShapeNode.init(path: path as CGPath)
             line.name = vt.key
@@ -231,7 +231,7 @@ public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITa
         circle.name = key
         circle.strokeColor = UIColor.blue
         circle.fillColor = UIColor.blue
-        circle.position = CGPoint.init(x: c.x * xScaleFactor - 2 , y: c.y * yScaleFactor - 4.5) // - 400.0 - 175.0
+        circle.position = CGPoint.init(x: c.x * xScaleFactor - 2.5 , y: c.y * yScaleFactor - 5) // - 400.0 - 175.0
         circle.alpha = 0.50
         self.mapView.mapScene.addChild(circle)
     }
