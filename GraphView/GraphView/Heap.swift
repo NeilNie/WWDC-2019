@@ -2,7 +2,7 @@
 //  Heap.swift
 //  Dijkstra Swift
 //
-//  Created by Yongyang Nie on 3/20/19.
+//  Created by Yongyang Nie on 3/21/19.
 //  Copyright © 2019 Yongyang Nie. All rights reserved.
 //
 
@@ -16,17 +16,20 @@ public class Heap {
     }
     
     private var array : Array<Any>
+//    private var nodes : Dictionary<String, Any>
     
     // MARK: Constructor
     
     public init() {
         
         self.array = Array()
+//        self.nodes = Dictionary()
     }
     
     public init(objects: [Any]) {
         
-        self.array = Array(arrayLiteral: objects)
+        self.array = Array.init(arrayLiteral: objects)
+//        self.nodes = Dictionary()
         
         for i in 0..<(objects.count / 2) {
             self.heapify(index: i, size: self.array.count)
@@ -134,6 +137,11 @@ public class Heap {
         return n as? Vertex
     }
     
+    //Heaps aren't built for efficient searches but the replace() and removeAtIndex() operations require the array index of the node, so you need to find that index somehow. Time: O(n).
+//    public func search(key: String) -> Vertex {
+//        return self.nodes[key] as! Vertex
+//    }
+    
     public func peek() -> Vertex {
         return self.array.first as! Vertex
     }
@@ -157,4 +165,9 @@ public class Heap {
     public func rightChildIndex(i: Int) -> Int{
         return 2 * i + 2;
     }
+    
+    public func print () {
+        
+    }
+
 }

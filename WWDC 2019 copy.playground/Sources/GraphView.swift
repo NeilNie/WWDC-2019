@@ -9,25 +9,24 @@
 import UIKit
 import SpriteKit
 
-class GraphView: UIView {
+public class GraphView: UIView {
     
-    var graphScene : SKView!
-    var graph : Graph!
+    public var graphScene : SKView!
+    public var graph : Graph!
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         
         super.init(frame: frame)
         
         self.graphScene = SKView.init()
         self.graphScene.frame = self.frame
         self.graphScene.presentScene(SKScene(fileNamed: "GraphViewScene.sks"))
-        self.graphScene.backgroundColor = UIColor.init(red: 245.0 / 255, green: 245.0 / 255, blue: 245.0 / 255, alpha: 1.0)
         self.addSubview(graphScene)
         
         self.graph = Graph()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -35,13 +34,18 @@ class GraphView: UIView {
         
         for (index, coordinate) in coordinates.enumerated() {
             
-            let circleNode = SKShapeNode.init(circleOfRadius: 10)
+            let circleNode = SKShapeNode.init(circleOfRadius: 12)
             circleNode.fillColor = UIColor.clear
             circleNode.lineWidth = 3.0
-            circleNode.strokeColor = UIColor.black
+            circleNode.strokeColor = UIColor.white
             circleNode.position = CGPoint.init(x: coordinate.x, y: coordinate.y)
             circleNode.name = String(index)
             self.graphScene.scene!.addChild(circleNode)
+            
+            let label = SKLabelNode(text: "\(index)")
+            label.fontSize = 11
+            label.position = CGPoint.init(x: circleNode.position.x, y: circleNode.position.y - 5)
+            self.graphScene.scene!.addChild(label)
             
             let vertex = Vertex.init(key: String(index), cost: Double(Int.max), coordinate: coordinate, cityName: "Name", cityState: "State")
             self.graph.addVertex(vertex: vertex)
@@ -66,42 +70,11 @@ class GraphView: UIView {
         line.fillColor = UIColor.red
         self.graphScene.scene!.addChild(line)
         
-        let label = SKLabelNode(text: "\(weight)")
+        let label = SKLabelNode(text: "\(round(weight))")
         label.position = line.position
+        label.fontSize = 9
         self.graphScene.scene!.addChild(label)
-
-    }
-    
-    public func findPath(startIndex: Int, endIndex: Int) -> Double {
         
-        self.graph.dijkstra(source: String(startIndex), destination: String(endIndex))
-        
-        var result = [String]()
-        var vt = self.graph.vertextForKey(key: String(endIndex))
-        
-        var totalCost = 0.0
-        
-        // get the path
-        while vt.previous != nil {
-            
-            result.append(vt.key)
-            
-            let path = CGMutablePath()
-            path.move(to: CGPoint.init(x: vt.coordinate.x, y: vt.coordinate.y))
-            path.addLine(to: CGPoint.init(x: vt.previous!.coordinate.x, y: vt.previous!.coordinate.y))
-            
-            let line = SKShapeNode.init(path: path as CGPath)
-            line.name = vt.key
-            line.lineWidth = 2.25
-            line.strokeColor = UIColor.red
-            line.fillColor = UIColor.red
-            self.graphScene.scene?.addChild(line)
-            
-            totalCost = totalCost + distance(x1: CGFloat(vt.coordinate.x), y1: CGFloat(vt.coordinate.y), x2: CGFloat((vt.previous?.coordinate.x)!), y2: CGFloat((vt.previous?.coordinate.y)!))
-            
-            vt = vt.previous!
-        }
-        return totalCost
     }
     
     func distance(x1: CGFloat, y1: CGFloat, x2: CGFloat, y2: CGFloat) -> Double{
@@ -112,11 +85,11 @@ class GraphView: UIView {
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }

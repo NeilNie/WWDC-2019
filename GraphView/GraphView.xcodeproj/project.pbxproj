@@ -18,6 +18,10 @@
 		0057E8F72246CE9F008ED18E /* GraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E8F62246CE9F008ED18E /* GraphViewTests.swift */; };
 		0057E9022246CE9F008ED18E /* GraphViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E9012246CE9F008ED18E /* GraphViewUITests.swift */; };
 		0057E9102246CEE8008ED18E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E90F2246CEE8008ED18E /* GraphView.swift */; };
+		0095C3EB2247C4B7002F1CB2 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095C3EA2247C4B7002F1CB2 /* Vertex.swift */; };
+		0095C3EF2247C710002F1CB2 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095C3EC2247C710002F1CB2 /* Heap.swift */; };
+		0095C3F02247C710002F1CB2 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095C3ED2247C710002F1CB2 /* PriorityQueue.swift */; };
+		0095C3F12247C710002F1CB2 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095C3EE2247C710002F1CB2 /* Graph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		0057E9012246CE9F008ED18E /* GraphViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewUITests.swift; sourceTree = "<group>"; };
 		0057E9032246CE9F008ED18E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0057E90F2246CEE8008ED18E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		0095C3EA2247C4B7002F1CB2 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		0095C3EC2247C710002F1CB2 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		0095C3ED2247C710002F1CB2 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		0095C3EE2247C710002F1CB2 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +113,13 @@
 		0057E8DA2246CE9D008ED18E /* GraphView */ = {
 			isa = PBXGroup;
 			children = (
+				0095C3EA2247C4B7002F1CB2 /* Vertex.swift */,
 				0057E8DB2246CE9D008ED18E /* AppDelegate.swift */,
 				0057E8DD2246CE9D008ED18E /* GraphViewScene.sks */,
 				0057E8DF2246CE9D008ED18E /* Actions.sks */,
+				0095C3EE2247C710002F1CB2 /* Graph.swift */,
+				0095C3EC2247C710002F1CB2 /* Heap.swift */,
+				0095C3ED2247C710002F1CB2 /* PriorityQueue.swift */,
 				0057E8E12246CE9D008ED18E /* GameScene.swift */,
 				0057E8E32246CE9D008ED18E /* GameViewController.swift */,
 				0057E90F2246CEE8008ED18E /* GraphView.swift */,
@@ -270,9 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0095C3F12247C710002F1CB2 /* Graph.swift in Sources */,
 				0057E8E22246CE9D008ED18E /* GameScene.swift in Sources */,
 				0057E8E42246CE9D008ED18E /* GameViewController.swift in Sources */,
 				0057E9102246CEE8008ED18E /* GraphView.swift in Sources */,
+				0095C3EF2247C710002F1CB2 /* Heap.swift in Sources */,
+				0095C3EB2247C4B7002F1CB2 /* Vertex.swift in Sources */,
+				0095C3F02247C710002F1CB2 /* PriorityQueue.swift in Sources */,
 				0057E8DC2246CE9D008ED18E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -76,8 +76,8 @@ public class MapRouteView: UIView {
         self.addSubview(clearButton)
         
         // UITable title label
-        titleLabel = UILabel.init(frame: CGRect.init(x: 15, y: 490, width: 300, height: 35))
-        titleLabel.text = "Major cities and towns on the paths"
+        titleLabel = UILabel.init(frame: CGRect.init(x: 15, y: 490, width: 200, height: 35))
+        titleLabel.text = "Major cities on the paths"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         titleLabel.textColor = UIColor(red: 137.0 / 255.0, green: 156.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0)
         titleLabel.alpha = 0.0

@@ -2,10 +2,9 @@
 //  PQ.swift
 //  Dijkstra Swift
 //
-//  Created by Yongyang Nie on 3/20/19.
+//  Created by Yongyang Nie on 3/21/19.
 //  Copyright © 2019 Yongyang Nie. All rights reserved.
 //
-//  The PQ class is essentially a top-level wrapper for the Heap class
 
 public class PriorityQueue {
     
@@ -21,6 +20,10 @@ public class PriorityQueue {
         
         self.heap = Heap.init(objects: objects)
     }
+    
+//    public func changePriority(key: String, value: Vertex) {
+//        self.heap.replace(key: key, value: value)
+//    }
     
     public func size() -> Int {
         return self.heap.count
@@ -40,6 +43,10 @@ public class PriorityQueue {
     
     public func dequeue() -> Vertex {
         return self.heap.remove()
+    }
+    
+    public func print () {
+        
     }
  
 }

@@ -2,14 +2,14 @@
 //  MapViewController.swift
 //  Dijkstra Swift iOS
 //
-//  Created by Yongyang Nie on 3/21/19.
+//  Created by Yongyang Nie on 3/20/19.
 //  Copyright © 2019 Yongyang Nie. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
 
-public class MapViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+public class MapRouteViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var graph = Graph()
     
@@ -19,63 +19,6 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
     
     let xScaleFactor = 750*0.64
     let yScaleFactor = 590*0.67
-    
-    // MARK: Import Map Data
-
-    public func importData() {
-
-        let url2 = Bundle.main.url(forResource: "name", withExtension: "csv")
-        let cityNameContent = try! String.init(contentsOf: url2!, encoding: String.Encoding.utf8)
-        var cityNames = cityNameContent.components(separatedBy: CharacterSet.newlines) as [String]
-        var cityDictionary = Dictionary<String, String>()
-        
-        for i in 0..<cityNames.count {
-            
-            let cityNameStr = cityNames[i]
-            var cityNameData = cityNameStr.components(separatedBy: ",")
-            
-            cityDictionary[cityNameData[0]] = cityNameData[1] + ", " + cityNameData[2]
-        }
-        
-        let url = Bundle.main.url(forResource: "city", withExtension: "csv")
-        let cityWholeContent = try! String.init(contentsOf: url!, encoding: String.Encoding.utf8)
-        var cityArray = cityWholeContent.components(separatedBy: CharacterSet.newlines) as [String]
-        
-        for i in 0..<cityArray.count {
-            
-            let cityStr = cityArray[i]
-            var cityData = cityStr.components(separatedBy: ",")
-            
-            let coordinate = Coordinate.init(x: Double(cityData[1])!, y: Double(cityData[2])!)
-            
-            let oneCity : Vertex
-            if cityDictionary.keys.contains(cityData[0]){
-                oneCity = Vertex.init(key: cityData[0], cost: Double(Int.max), coordinate: coordinate, cityName: cityDictionary[cityData[0]]!, cityState: cityDictionary[cityData[0]]!)
-                self.cities.append(cityDictionary[cityData[0]]!)
-            }else{
-                oneCity = Vertex.init(key: cityData[0], cost: Double(Int.max), coordinate: coordinate, cityName: nil, cityState: nil)
-            }
-            
-            self.graph.addVertex(vertex: oneCity)
-        }
-        
-        //import connection file
-        let url3 = Bundle.main.url(forResource: "connection", withExtension: "csv")
-        
-        let connectionContent = try! String.init(contentsOf: url3!, encoding: String.Encoding.utf8)
-        var connections = connectionContent.components(separatedBy: CharacterSet.newlines)
-//        print("total connections \(connections.count)")
-        
-        for i in 0..<connections.count{
-            
-            var connectionRow = connections[i].components(separatedBy: ",")
-            
-            let s = self.graph.vertextForKey(key: connectionRow[0]).coordinate
-            let e = self.graph.vertextForKey(key: connectionRow[1]).coordinate
-            self.graph.addEdge(from: connectionRow[0], to: connectionRow[1], weight: self.distance(x1: s.x, y1: s.y, x2: e.x, y2: e.y))
-
-        }
-    }
     
     // MARK: - UITableView Delegate
     
@@ -91,8 +34,9 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         return self.routeResult.count
     }
     
-    @objc
     // MARK: - IBAction
+    
+    @objc
     public func makeRoute() {
         
         if self.mapView.viewClear == true {
@@ -155,7 +99,7 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         
         let sn = SKSpriteNode.init(imageNamed: "map.png")
         sn.size = CGSize.init(width: 680, height: 423)
-        sn.position = CGPoint.init(x: 0, y: 10)
+        sn.position = CGPoint.init(x: 0, y: 0)
         sn.xScale = 0.90
         sn.yScale = 0.90
         sn.alpha = 0.75
@@ -170,14 +114,13 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
     
         let methodStart = Date.init()
         
+        // run dijkstra's algorithm
         self.graph.dijkstra(source: start, destination: end)
-    
-//        var d = 0.0
         
         var result = [String]()
-    
         var vt = self.graph.vertextForKey(key: end)
-
+        
+        // get the path
         while vt.previous != nil {
             
             if vt.cityName != nil{
@@ -195,24 +138,41 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
             line.fillColor = UIColor.red
             self.mapView.mapScene.addChild(line)
             
-//            d = d + self.distance(x1: vt.coordinate.x, y1: vt.coordinate.y, x2: (vt.previous?.coordinate.x)!, y2: (vt.previous?.coordinate.y)!)
-
             vt = vt.previous!
         }
         
-        self.routeResult = result.reversed()
-        self.routeResult.append(start)
-    
-        let methodFinish = Date.init();
-        let executionTime = methodFinish.timeIntervalSince(methodStart);
-        print(executionTime)
-        
-        // update views
-        self.mapView.resultsTableView.reloadData()
-        self.showHiddenViewsWithAlert(executionTime: executionTime, resultCount: result.count)
-        
+        if result.count > 0{
+            self.routeResult.append(self.graph.vertextForKey(key: start).cityName)
+            self.routeResult = result.reversed()
+            
+            // calculate execution time
+            let methodFinish = Date.init();
+            let executionTime = methodFinish.timeIntervalSince(methodStart);
+            
+            // update views
+            self.mapView.resultsTableView.reloadData()
+            self.showHiddenViewsWithAlert(executionTime: executionTime, resultCount: result.count)
+        }else{
+            self.showNotFountAlert()
+        }
     }
 
+    func showNotFountAlert() {
+        
+        let alert = UIAlertController(title: "Oops", message: "No path found... Please try a different city.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                alert.dismiss(animated: true, completion: nil)
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                alert.dismiss(animated: true, completion: nil)
+        }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func showHiddenViewsWithAlert(executionTime: Double, resultCount: Int) {
         
         UIView.animate(withDuration: 0.35, animations: {
@@ -246,7 +206,7 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
     
     func drawCities(c: Coordinate, key: String){
     
-        let circle = SKShapeNode.init(circleOfRadius: 2.00)
+        let circle = SKShapeNode.init(circleOfRadius: 1.75)
         circle.name = key
         circle.strokeColor = UIColor.blue
         circle.fillColor = UIColor.blue
@@ -255,8 +215,9 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         self.mapView.mapScene.addChild(circle)
     }
     
+    // for a better viewing experience, I only draw one city for every one hundred data point.
     func drawAllCities() {
-    
+        
         var i = 0;
         for keyString in self.graph.adjacencyList.keys {
             
@@ -286,18 +247,76 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         return "Not Found"
     }
     
+    // MARK: Import Map Data
+    
+    public func importData() {
+        
+        let url2 = Bundle.main.url(forResource: "name", withExtension: "csv")
+        let cityNameContent = try! String.init(contentsOf: url2!, encoding: String.Encoding.utf8)
+        var cityNames = cityNameContent.components(separatedBy: CharacterSet.newlines) as [String]
+        var cityDictionary = Dictionary<String, String>()
+        
+        for i in 0..<cityNames.count {
+            
+            let cityNameStr = cityNames[i]
+            var cityNameData = cityNameStr.components(separatedBy: ",")
+            
+            cityDictionary[cityNameData[0]] = cityNameData[1] + ", " + cityNameData[2]
+        }
+        
+        let url = Bundle.main.url(forResource: "city", withExtension: "csv")
+        let cityWholeContent = try! String.init(contentsOf: url!, encoding: String.Encoding.utf8)
+        var cityArray = cityWholeContent.components(separatedBy: CharacterSet.newlines) as [String]
+        
+        for i in 0..<cityArray.count {
+            
+            let cityStr = cityArray[i]
+            var cityData = cityStr.components(separatedBy: ",")
+            
+            let coordinate = Coordinate.init(x: Double(cityData[1])!, y: Double(cityData[2])!)
+            
+            let oneCity : Vertex
+            if cityDictionary.keys.contains(cityData[0]){
+                oneCity = Vertex.init(key: cityData[0], cost: Double(Int.max), coordinate: coordinate, cityName: cityDictionary[cityData[0]]!, cityState: cityDictionary[cityData[0]]!)
+                self.cities.append(cityDictionary[cityData[0]]!)
+            }else{
+                oneCity = Vertex.init(key: cityData[0], cost: Double(Int.max), coordinate: coordinate, cityName: nil, cityState: nil)
+            }
+            
+            self.graph.addVertex(vertex: oneCity)
+        }
+        
+        //import connection file
+        let url3 = Bundle.main.url(forResource: "connection", withExtension: "csv")
+        
+        let connectionContent = try! String.init(contentsOf: url3!, encoding: String.Encoding.utf8)
+        var connections = connectionContent.components(separatedBy: CharacterSet.newlines)
+        
+        for i in 0..<connections.count{
+            
+            var connectionRow = connections[i].components(separatedBy: ",")
+            
+            let s = self.graph.vertextForKey(key: connectionRow[0]).coordinate
+            let e = self.graph.vertextForKey(key: connectionRow[1]).coordinate
+            self.graph.addEdge(from: connectionRow[0], to: connectionRow[1], weight: self.distance(x1: s.x, y1: s.y, x2: e.x, y2: e.y))
+            
+        }
+    }
+    
     // MARK: - UITextField Delegate
 
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         
+        // clear any existing paths
         clearScene()
         
+        // initialize the SearchViewControllers
         let searchViewController = SearchViewController()
         searchViewController.data = self.cities
         searchViewController.sender = textField
         searchViewController.preferredContentSize = CGSize(width: 700, height: 760)
 
-        
+        // present searchViewController
         self.present(searchViewController, animated: true, completion: nil)
     }
     
@@ -311,14 +330,17 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         self.mapView = MapRouteView.init(frame: CGRect.init(x: (768 / 2) - CGFloat((700 / 2)), y: 50, width: 700, height: 900))
         self.view.addSubview(self.mapView)
         
+        // self.mapView assign delegates
         self.mapView.endTextField.delegate = self
         self.mapView.startTextField.delegate = self
         self.mapView.resultsTableView.delegate = self
         self.mapView.resultsTableView.dataSource = self
+        
         self.mapView.resultsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableCell")
         self.mapView.resultsTableView.alpha = 0.0
-        
         self.mapView.clearButton.isEnabled = false
+        
+        // add actions to self.mapView buttons
         self.mapView.clearButton.addTarget(self, action: #selector(clearRoute), for: UIControl.Event.touchUpInside)
         self.mapView.routeButton.addTarget(self, action: #selector(makeRoute), for: UIControl.Event.touchUpInside)
         
@@ -328,16 +350,4 @@ public class MapViewController: UIViewController, UITextFieldDelegate, UITableVi
         drawAllCities()
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

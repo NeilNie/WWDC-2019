@@ -24,4 +24,4 @@ window.makeKeyAndVisible()
 
 PlaygroundPage.current.liveView = window
 
-//: [About Dijkstra's Algorithm](About%20Dijkstra's%20Algorithm) |  [Under the Hood](Under%20the%20Hood)
+//: [Previous](@About%20Dijkstra's%20Algorithm) | [Next](@Under%20the%20Hood)

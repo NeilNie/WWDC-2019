@@ -2,20 +2,15 @@
 //  Vertex.swift
 //  Dijkstra Swift
 //
-//  Created by Yongyang Nie on 3/20/19.
+//  Created by Yongyang Nie on 3/21/19.
 //  Copyright © 2019 Yongyang Nie. All rights reserved.
 //
+
+
 
 public struct Coordinate{
     var x = Double()
     var y = Double()
-    
-    public init (x: Double, y: Double) {
-        self.x = x
-        self.y = y
-    }
-    
-    public init () { }
 }
 
 public class Vertex {

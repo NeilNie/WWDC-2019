@@ -2,7 +2,7 @@
 //  Graph.swift
 //  Dijkstra Swift
 //
-//  Created by Yongyang Nie on 3/20/19.
+//  Created by Yongyang Nie on 3/21/19.
 //  Copyright © 2019 Yongyang Nie. All rights reserved.
 //
 
@@ -70,6 +70,10 @@ public class Graph {
                 }
             }
         }
+    }
+    
+    public func print() {
+        
     }
 
 }

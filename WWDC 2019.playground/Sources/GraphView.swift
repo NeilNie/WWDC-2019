@@ -9,25 +9,24 @@
 import UIKit
 import SpriteKit
 
-class GraphView: UIView {
+public class GraphView: UIView {
     
-    var graphScene : SKView!
-    var graph : Graph!
+    public var graphScene : SKView!
+    public var graph : Graph!
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         
         super.init(frame: frame)
         
         self.graphScene = SKView.init()
         self.graphScene.frame = self.frame
         self.graphScene.presentScene(SKScene(fileNamed: "GraphViewScene.sks"))
-        self.graphScene.backgroundColor = UIColor.init(red: 245.0 / 255, green: 245.0 / 255, blue: 245.0 / 255, alpha: 1.0)
         self.addSubview(graphScene)
         
         self.graph = Graph()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -35,13 +34,21 @@ class GraphView: UIView {
         
         for (index, coordinate) in coordinates.enumerated() {
             
-            let circleNode = SKShapeNode.init(circleOfRadius: 10)
+            let circleNode = SKShapeNode.init(circleOfRadius: 15)
             circleNode.fillColor = UIColor.clear
             circleNode.lineWidth = 3.0
-            circleNode.strokeColor = UIColor.black
+            circleNode.fillColor = UIColor.white
+            circleNode.strokeColor = UIColor.white
             circleNode.position = CGPoint.init(x: coordinate.x, y: coordinate.y)
             circleNode.name = String(index)
             self.graphScene.scene!.addChild(circleNode)
+            
+            let label = SKLabelNode(text: "\(index)")
+            label.fontColor = UIColor.darkGray
+            label.fontSize = 15
+            label.fontName = "AvenirNext-Bold"
+            label.position = CGPoint.init(x: circleNode.position.x, y: circleNode.position.y - 5)
+            self.graphScene.scene!.addChild(label)
             
             let vertex = Vertex.init(key: String(index), cost: Double(Int.max), coordinate: coordinate, cityName: "Name", cityState: "State")
             self.graph.addVertex(vertex: vertex)
@@ -53,7 +60,7 @@ class GraphView: UIView {
         let startNode = self.graphScene.scene!.childNode(withName: String(startVertexIndex))
         let endNode = self.graphScene.scene!.childNode(withName: String(endVertexIndex))
         
-        let weight = distance(x1: (startNode?.position.x)!, y1: startNode!.position.y, x2: endNode!.position.x, y2: endNode!.position.y)
+        let weight = distance(x1: startNode!.position.x, y1: startNode!.position.y, x2: endNode!.position.x, y2: endNode!.position.y)
         graph.addEdge(from: String(startVertexIndex), to: String(endVertexIndex), weight: weight)
         
         let path = CGMutablePath()
@@ -62,18 +69,21 @@ class GraphView: UIView {
         
         let line = SKShapeNode.init(path: path as CGPath)
         line.lineWidth = 2.25
-        line.strokeColor = UIColor.red
-        line.fillColor = UIColor.red
+        line.strokeColor = UIColor.white
+        line.fillColor = UIColor.white
+        line.zPosition = -1
         self.graphScene.scene!.addChild(line)
         
-        let label = SKLabelNode(text: "\(weight)")
-        label.position = line.position
+        let label = SKLabelNode(text: "\(round(weight))")
+        label.position = CGPoint.init(x: (startNode!.position.x + endNode!.position.x) / 2, y: (startNode!.position.y + endNode!.position.y) / 2)
+        label.fontSize = 12
         self.graphScene.scene!.addChild(label)
-
+        
     }
     
     public func findPath(startIndex: Int, endIndex: Int) -> Double {
         
+        // run dijkstra's algorithm
         self.graph.dijkstra(source: String(startIndex), destination: String(endIndex))
         
         var result = [String]()
@@ -81,7 +91,7 @@ class GraphView: UIView {
         
         var totalCost = 0.0
         
-        // get the path
+        // draw the path red
         while vt.previous != nil {
             
             result.append(vt.key)
@@ -95,6 +105,7 @@ class GraphView: UIView {
             line.lineWidth = 2.25
             line.strokeColor = UIColor.red
             line.fillColor = UIColor.red
+            line.zPosition = -1
             self.graphScene.scene?.addChild(line)
             
             totalCost = totalCost + distance(x1: CGFloat(vt.coordinate.x), y1: CGFloat(vt.coordinate.y), x2: CGFloat((vt.previous?.coordinate.x)!), y2: CGFloat((vt.previous?.coordinate.y)!))
@@ -112,11 +123,11 @@ class GraphView: UIView {
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }
